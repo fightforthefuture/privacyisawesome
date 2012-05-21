@@ -48,6 +48,20 @@ blockquote, q {
 strong {font-weight: bold;}
 em {font-style: italic;}
 
+@font-face {
+    font-family: 'OSPDIN';
+    src: url('/css/fonts/OSP-DIN-webfont.eot');
+    src: url('/css/fonts/OSP-DIN-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/css/fonts/OSP-DIN-webfont.woff') format('woff'),
+         url('/css/fonts/OSP-DIN-webfont.ttf') format('truetype'),
+         url('/css/fonts/OSP-DIN-webfont.svg#OSPDIN') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.ospdin {font: 60px/68px 'OSPDIN', Arial, sans-serif;letter-spacing: 0;}
+
 
 
 body {
@@ -71,11 +85,25 @@ body {
 .wrap {
 	width: 860px;
 	margin: 0 auto;
-	margin-top: -400px;
+	margin-top: -405px;
 }
 
 .wrap h1 {
 	color: #fff;
+	font-size: 124px;
+	text-align: center;
+	text-transform: uppercase;
+	text-shadow: 0px 5px 5px rgba(0,0,0,.75);
+}
+
+.because, .but {
+	color: #fff;
+	font-size: 16px;
+	margin-top: 20px;
+}
+
+.because h2, .but h2 {
+	font-size: 24px; font-weight: bold;
 }
 
 .because {
@@ -96,12 +124,22 @@ body {
 	height: 108px; 
 	background: url(/images/takebackground.png) no-repeat;
 	margin: 0 auto;
+	position: absolute;
+	margin-left: 125px;
+	margin-top: 264px;
+}
+
+.head {
+	padding-top: 20px;
+	overflow: auto;
+	height: 475px;
 }
 
 p.instructions {
 	width: 540px;
 	float: left;
 	font-weight: bold;
+	margin-top: 20px;
 }
 
 p.instructions strong {
@@ -109,13 +147,14 @@ p.instructions strong {
 }
 
 .dates {
-	width: 236px;
+	width: 256px;
 	display: block;
 	text-indent: -9999px;
 	height: 116px; 
 	background: url(/images/datesbackground.png) no-repeat;
 	float: right;
 }
+.preface {overflow: auto; margin-left: 20px; margin-right: 20px;}
 
 .breakitdown {
 	width: 884px;
@@ -124,9 +163,8 @@ p.instructions strong {
 	display: block;
 	clear: both;
 	margin: 0 auto;
-	margin-top: 10px;
-	margin-bottom: 10px;
-
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
 
 .step {
