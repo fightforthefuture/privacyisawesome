@@ -1,0 +1,168 @@
+span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+    outline: 0;
+}
+body {
+    line-height: 1;
+    color: black;
+    background: white;
+}
+ol, ul {
+    list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+caption, th, td {
+    text-align: left;
+    font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: "";
+}
+blockquote, q {
+    quotes: "" "";
+}
+
+strong {font-weight: bold;}
+em {font-style: italic;}
+
+
+
+body {
+	margin: 0 auto;
+	background: url(/images/body_background.png);
+	font-family: 'helvetica neue', helvetica, verdana;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+.photostream {
+	height: 178px;
+	background: url(/images/photostream.png) repeat-x center;
+}
+
+.bluestripes {
+	height: 309px;
+	background: url(/images/bluestripes.png) repeat-x;
+}
+
+.wrap {
+	width: 860px;
+	margin: 0 auto;
+	margin-top: -400px;
+}
+
+.wrap h1 {
+	color: #fff;
+}
+
+.because {
+	width: 400px;
+	float: left;
+}
+
+.but {
+	width: 400px;
+	float: right;
+}
+
+.take {
+	clear: both;
+	width: 700px;
+	display: block;
+	text-indent: -9999px;
+	height: 108px; 
+	background: url(/images/takebackground.png) no-repeat;
+	margin: 0 auto;
+}
+
+p.instructions {
+	width: 540px;
+	float: left;
+	font-weight: bold;
+}
+
+p.instructions strong {
+	color: #a53937;
+}
+
+.dates {
+	width: 236px;
+	display: block;
+	text-indent: -9999px;
+	height: 116px; 
+	background: url(/images/datesbackground.png) no-repeat;
+	float: right;
+}
+
+.breakitdown {
+	width: 884px;
+	height: 17px;
+	background: url(/images/breakitdown.png) no-repeat;
+	display: block;
+	clear: both;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+}
+
+.step {
+	clear: both;
+}
+
+.first {background: url(/images/stepone.png) no-repeat;}
+.second {background: url(/images/steptwo.png) no-repeat;}
+.third {background: url(/images/stepthree.png) no-repeat;}
+.fourth {background: url(/images/stepfour.png) no-repeat;}
+.fifth {background: url(/images/stepfifth.png) no-repeat;}
+.bordertwo {
+	width: 100%;
+	background: url(http://fightforthefuture.org/images/new/logotwobackground.png) repeat-x;
+	clear: both;
+	height: 83px;
+	overflow: auto;
+	margin-top: 20px;
+	position: relative; z-index: 4;
+}
+
+.bordertwo h5 {
+	margin: 0 auto;
+	width: 236px;
+	height: 40px;
+	text-indent: -999px;
+	background: url(http://fightforthefuture.org/images/new/logotwo.png) no-repeat;
+	margin-top: 20px;
+	display: block;
+}
+
+.footer {
+	background: url(http://fightforthefuture.org/images/new/striped_background.png);
+	margin-bottom: 0; 
+	padding-bottom: 50px; 
+	margin-top: -50px; 
+	padding-top: 100px; 
+	z-index: 5;
+}
