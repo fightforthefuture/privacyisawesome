@@ -68,7 +68,7 @@ body {
 	margin: 0 auto;
 	background: url(/images/body_background.png);
 	font-family: 'helvetica neue', helvetica, verdana;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1.5;
 }
 
@@ -99,7 +99,7 @@ body {
 .because, .but {
 	color: #fff;
 	font-size: 16px;
-	margin-top: 20px;
+	margin-top: 30px;
 }
 
 .because h2, .but h2 {
@@ -107,12 +107,12 @@ body {
 }
 
 .because {
-	width: 400px;
+	width: 420px;
 	float: left;
 }
 
 .but {
-	width: 400px;
+	width: 420px;
 	float: right;
 }
 
@@ -169,6 +169,33 @@ p.instructions strong {
 
 .step {
 	clear: both;
+	overflow: auto;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px dotted #000;
+}
+
+.step input.done {
+	float: left; margin-left: 100px; margin-top: 20px;
+}
+
+.step p.details {width: 670px; float: right; clear: right;}
+.step .formz {
+	width: 670px; 
+	float: right; 
+	clear: right;
+	background: #b8cfda;
+	border-radius: 5px;
+	margin-top: 20px;
+}
+
+.step .formz .buffer {
+	background: #5cb1d9;
+	margin: 10px;
+	border: 1px solid #fff;
+	display: block;
+	border-radius: 3px;
+		padding: 15px;
 }
 
 .first {background: url(/images/stepone.png) no-repeat;}
@@ -176,6 +203,7 @@ p.instructions strong {
 .third {background: url(/images/stepthree.png) no-repeat;}
 .fourth {background: url(/images/stepfour.png) no-repeat;}
 .fifth {background: url(/images/stepfifth.png) no-repeat;}
+
 .bordertwo {
 	width: 100%;
 	background: url(http://fightforthefuture.org/images/new/logotwobackground.png) repeat-x;
