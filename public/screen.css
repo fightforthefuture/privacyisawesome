@@ -96,6 +96,7 @@ body {
 	text-shadow: 0px 5px 5px rgba(0,0,0,.75);
 }
 
+form.noformz {text-align: right;}
 .because, .but {
 	color: #fff;
 	font-size: 16px;
@@ -195,15 +196,69 @@ p.instructions strong {
 	border: 1px solid #fff;
 	display: block;
 	border-radius: 3px;
-		padding: 15px;
+	padding: 15px;
+	color: #fff;
+	padding: 15px 50px;	
 }
 
+
+.buffer p {font-weight: bold; margin-top: 10px; margin-bottom: 10px;}
+
+.buffer .disclosure {font-weight: normal; font-size: 12px;}
+
+.step form input {
+	font-size: 16px;
+	height: 42px;
+	border: 0;
+	border-radius: 2px;	
+	padding: 0;
+	padding-left: 10px;
+	display: inline-block;
+}
+
+.step form button, a.btn {
+	text-decoration: none;	
+	padding-top: 9px;
+	padding-bottom: 9px;
+	background: #63851b;
+	font: 20px 'OSPDIN', Arial, sans-serif;
+	border: 0;
+	color: #fff;
+	display: inline-block;
+	text-transform: uppercase;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 2px;
+}
+
+.step input.done {
+	background: #dedbd7;
+	border-radius: 4px;
+	border: 0;
+}
+
+.step p a.btn {display: inline-block; float: right; margin-left: 10px; margin-top: 20px; padding-left: 45px;}
+.step a.reddit {background: #d95220 url(/images/redditbackground.png) no-repeat;
+		background-position: 6px 6px;}
+.step a.fb {background: #3b5998 url(/images/fbbackground.png) no-repeat;
+	background-position: 6px 6px;}
+a#souvenir {float: right; clear: both;}
+.noformz {width: 675px; display: block; float: right; margin-top: 20px;}
 .first {background: url(/images/stepone.png) no-repeat;}
 .second {background: url(/images/steptwo.png) no-repeat;}
 .third {background: url(/images/stepthree.png) no-repeat;}
 .fourth {background: url(/images/stepfour.png) no-repeat;}
-.fifth {background: url(/images/stepfifth.png) no-repeat;}
+.fifth {background: url(/images/stepfive.png) no-repeat;}
 
+h4.ospdin {
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	color: #000;
+	margin-bottom: 50px;
+}
+
+h4.ospdin a {color: #5d5d5d; text-decoration: none;}
 .bordertwo {
 	width: 100%;
 	background: url(http://fightforthefuture.org/images/new/logotwobackground.png) repeat-x;
@@ -229,6 +284,6 @@ p.instructions strong {
 	margin-bottom: 0; 
 	padding-bottom: 50px; 
 	margin-top: -50px; 
-	padding-top: 100px; 
+	padding-top: 40px; 
 	z-index: 5;
 }
