@@ -208,10 +208,11 @@ p.instructions strong {
 
 .step form input {
 	font-size: 16px;
-	height: 42px;
+/*	height: 42px;*/
+	padding-top: 11px;
+	padding-bottom: 11px;
 	border: 0;
 	border-radius: 2px;	
-	padding: 0;
 	padding-left: 10px;
 	display: inline-block;
 }
@@ -237,7 +238,7 @@ p.instructions strong {
 	border: 0;
 }
 
-.step p a.btn {display: inline-block; float: right; margin-left: 10px; margin-top: 20px; padding-left: 45px;}
+.step p a.btn {margin-left: 10px; margin-top: 20px; padding-left: 45px;}
 .step a.reddit {background: #d95220 url(/images/redditbackground.png) no-repeat;
 		background-position: 6px 6px;}
 .step a.fb {background: #3b5998 url(/images/fbbackground.png) no-repeat;
