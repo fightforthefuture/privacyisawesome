@@ -172,9 +172,14 @@
 					<p class="details">Call every day to follow up until they give you a meeting date and time. Even better, sign up to get a daily reminder. Gold stars for this.</p>
 	
 				
-						<form class="noformz">
-							<input placeholder="email" style="width: 46%;"/>
-							<input placeholder="zipcode" />
+						<form class="noformz action_form" name="reminder" method="POST" action="http://a.fightforthefuture.org/act/" accept-charset="utf-8">
+							<input placeholder="email" name="email" style="width: 46%;"/>
+							<input placeholder="zipcode" name="zip" />
+							<input type="hidden" name="utf8" value="&#x2714;">
+							<input type="hidden" name="page" value="PIA_reminders_placeholder">
+
+							<input type="hidden" name="lists" value="7" />
+							
 							<button type="submit" />Get reminder</button>
 							
 						</form>
