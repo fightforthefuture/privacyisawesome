@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title></title>
+	<script type="text/javascript">
+  window.startTime = (new Date()).getTime();
+  </script>
+<title>Privacy is Awesome</title>
 <link rel="stylesheet" href="/screen.css">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="/jquery.cookie.js"></script>
 <script src="https://s3.amazonaws.com/fftf.media/img/placeholder.js"></script>
+<script src="http://a.fightforthefuture.org/samples/actionkit.js"></script>
 
 </head>
 <body>
+
+	<script>
+		actionkit.forms.initPage()
+
+	</script>
 	
 	<script>
 	$(function() {
 	 $('input, textarea').placeholder();
 	});
+	
+	
+	
 	</script>
+	
+	</script>
+
 	
 	<div class="photostream" id="top"></div>
 	<div class="bluestripes"></div>
@@ -46,20 +62,76 @@
 				
 				<div class="breakitdown"></div>
 				<div class="step first">
-					<input type="checkbox"  checked class="done" />
+					<input type="checkbox"  class="done call_form_thing" />
 				
 					<p class="details">Call your senators, tell them you oppose CISPA, and request to meet with them over the Memorial Day recess about the bill. Right now we just need everyone to request meeting times; we'll do the actual organizing later. This is the single most effective thing we can do right now.</p>
 						<div class="formz">
 							<span class="buffer">
-			
-						<p>Enter your zipcode to look up your senators. Enter your email, and we'll send a letter to your Senator too.</p>
-						<form>
-							<input placeholder="email" style="width: 45%;"/>
-							<input placeholder="zipcode" style="width: 20%;"/>
+								<div id="what_to_say">
+								</div>
+						<p class="instru">Enter your zipcode to look up your senators. Enter your email, and we'll send a letter to your Senator too.</p>
+						<form class="ak-form" name="call" id="call_form" method="POST" action="http://a.fightforthefuture.org/act/" accept-charset="utf-8">
+							<input type="hidden" name="utf8" value="&#x2714;">
+							<div id="who_called"></div>
+														<div id="target_checkboxes"></div>
+							<input placeholder="email" name="email" style="width: 45%;" class="previous" />
+							<input placeholder="zipcode" name="zip" style="width: 20%;" class="previous"/>
+							<input type="hidden" value="FL" name="state" />
+							<input type="hidden" name="page" value="meet-about-privacy">
+							<input type="hidden" name="lists" value="7" />
+
 							<button type="submit" />Find your senator</button>
 						</form>
 						<p class="disclosure">Email is optional. Fight for the Future will update you about this and related campaigns. </p>
-				
+						
+						
+						<script type="text/ak-template" for="what_to_say">
+						[% if (incomplete) { %]
+						<p>Fill out the form below so we can find the number for you to call.</p>
+						[% } else { %]
+						<p>"Hi, my name is [______], and I am calling from [my town, my state]. I am asking the Senator to vote NO on S. 2105 or any cybersecurity bill that infringes on my civil liberties. The right to privacy is very importnat to me, and I think there are better approaches to cybersecurity. I would like to request a meeting with the Senator for my group to speak to him. What is the best way to go about that? Will you please make sure to note I called to oppose S 2105?"</p>
+						[% } %]
+						</script>
+						
+						
+						<script type="text/ak-template" for="who_called">
+						[% if (!incomplete) { 
+							$(function() {
+								$.cookie("privacy_call", "yes");
+								$("#call_form button").html('Let Us Know');
+								$('#call_form input.previous').hide();
+								$('.instru').hide();
+							});
+							
+							%]
+						<p>Who did you call?</p>
+						[% } %]
+						</script>
+
+						
+
+						<div id="ak-survey_question"></div>
+
+						<script type="text/ak-template" for="ak-survey_question">
+						[% if (!incomplete) { 	%]
+
+<!-- 				// <p style="clear: both;"><label for="id_name"><p>How'd it go? Tell us what happened when you called so we can start planning next steps.</p>
+						// 						<p>If you got a meeting time,&nbsp;<a title="List your meeting " href="http://a.fightforthefuture.org/event/save_privacy/create/">please tell us here</a> so we can help you organize it!&nbsp;</p></label> 
+						// 
+						// 						<textarea class="span-7" id="id_action_survey" name="action_survey" style="height: 100px"></textarea></p> -->
+						
+						
+						[% } %]
+						</script>
+						
+						
+						
+						
+						
+						<script type="text/javascript">
+						actionkit.forms.contextRoot = 'http://a.fightforthefuture.org/context/';
+						actionkit.forms.initForm('call');
+						</script>
 						</form>
 		
 					</div>
@@ -67,7 +139,7 @@
 
 
 				<div class="step second">
-					<input type="checkbox"  checked class="done"/>
+					<input type="checkbox"  class="done letter_form_thing"/>
 					<p class="details">Keep the pressure on. Email your senators' offices right now about CISPA. </p>
 
 
@@ -75,10 +147,14 @@
 <div class="formz">
 		<span class="buffer" class="done">
 					
-						<form>
-							<input placeholder="email" style="width: 20%;" />
-							<input placeholder="address" style="width: 35%;"/>
-							<input placeholder="zipcode" style="width: 15%;"/>
+						<form class="ak-form" name="letter" method="POST" action="http://a.fightforthefuture.org/act/" accept-charset="utf-8">
+							<input placeholder="email" name="email" style="width: 20%;" />
+							<input placeholder="address" name="address1" style="width: 35%;"/>
+							<input placeholder="zipcode" name="zip" style="width: 15%;"/>
+							<input type="hidden" name="page" value="cispa_letter">
+<input type="hidden" name="utf8" value="&#x2714;">
+
+							<input type="hidden" name="lists" value="7" />
 							<button type="submit">Email now</button>
 							</form>
 								<p>I am writing to you as your constituent. I strongly disagree with cybersecurity legislation that would put my privacy at risk. I am asking the Senator to vote NO on S. 2105 or any cybersecurity bill that infringes on my civil liberties. The right to privacy is very importnat to me, and I think there are better approaches to cybersecurity. We are requesting a meeting with the Senator for my group to speak to him. What is the best way to go about that?"  </p>
@@ -91,7 +167,7 @@
 				</div><!-- close .step .second -->
 
 				<div class="step third">
-					<input type="checkbox"  checked class="done"/>
+					<input type="checkbox"  class="done"/>
 	
 					<p class="details">Call every day to follow up until they give you a meeting date and time. Even better, sign up to get a daily reminder. Gold stars for this.</p>
 	
@@ -107,7 +183,7 @@
 				</div><!-- close .step .third -->
 
 				<div class="step fourth">
-					<input type="checkbox"  checked class="done" />
+					<input type="checkbox"  class="done" />
 	
 					<p class="details">Help us make this organizing happen. Massive organizing on CISPA will cost us $10,000. A donor (Bob Fertik of Democrats.com) will match our donations up to $5,000. Help fund the organizer and website that is helping us beat CISPA.</p>
 	
@@ -116,7 +192,7 @@
 				</div><!-- close .step .fourth -->
 
 				<div class="step fifth">
-					<input type="checkbox"  checked class="done"/>
+					<input type="checkbox"  class="done"/>
 	
 					<p class="details">Make sure people go to the meetings. Get talking points and join a training call.</p>
 	
@@ -135,5 +211,18 @@
 </div>
 
 </div>
+
+<script>
+var privacy_call = $.cookie("privacy_call");
+if (privacy_call == "yes") {
+	$('.call_form_thing').attr('checked', true);
+	}	
+	
+	var privacy_letter = $.cookie("privacy_letter");
+	if (privacy_letter == "yes") {
+		$('.letter_form_thing').attr('checked', true);
+		}
+
+</script>
 </body>
 </html>

@@ -119,15 +119,15 @@ form.noformz {text-align: right;}
 
 .take {
 	clear: both;
-	width: 700px;
+	width: 860px;
 	display: block;
 	text-indent: -9999px;
 	height: 108px; 
-	background: url(/images/takebackground.png) no-repeat;
+	background: url(/images/takebackground.png) no-repeat center;
 	margin: 0 auto;
 	position: absolute;
-	margin-left: 125px;
 	margin-top: 264px;
+	
 }
 
 .head {
@@ -288,3 +288,5 @@ h4.ospdin a {color: #5d5d5d; text-decoration: none;}
 	padding-top: 40px; 
 	z-index: 5;
 }
+
+a.btn, button {cursor: pointer;}
