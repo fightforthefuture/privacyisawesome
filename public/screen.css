@@ -206,7 +206,7 @@ p.instructions strong {
 
 .buffer .disclosure {font-weight: normal; font-size: 12px;}
 
-.step form input {
+.step form input, .step form textarea {
 	font-size: 16px;
 /*	height: 42px;*/
 	padding-top: 11px;
@@ -215,6 +215,12 @@ p.instructions strong {
 	border-radius: 2px;	
 	padding-left: 10px;
 	display: inline-block;
+}
+
+.step form textarea {
+	width: 536px;
+	height: 100px;
+	margin-top: 3px;
 }
 
 .step form button, a.btn {

@@ -93,6 +93,10 @@
 			</div>
 				
 				<div class="breakitdown"></div>
+				
+
+						
+						
 				<div class="step first">
 					<input type="checkbox"  class="done call_form_thing" />
 				
@@ -115,6 +119,18 @@
 														<input type="text" name="person[email]" placeholder="Email (optional)" class="email" style="width: 27%;" />
 														<button type="submit" id="findursenator" />Find your senator</button>
 														</form>
+														<form class="action_form" id="cispa_reportback" name="act" method="POST" action="http://a.fightforthefuture.org/act/" accept-charset="utf-8" style="display: none;" >
+														<input type="hidden" name="utf8" value="&#x2714;">
+
+														<input id="id_name" type="text" name="name" placeholder="your name" style="width: 261px;"/>
+												    <input id="emailzz" type="email" name="email" placeholder="your email" style="width: 261px;"/>
+														<textarea placeholder="Report how you call went" name="user_msg"></textarea>
+
+														<input type="hidden" name="page" value="cispa_reportback">
+
+														<input type="hidden" name="lists" value="7" />
+														<button type="submit">Tell us about your call</button>
+														</form>
 														
 														<script>
 														// Send something like this on submit, hide the form and show the script
@@ -130,8 +146,13 @@
 																		"person[email]": $('form#call input.email').val(), 																		
 																		mconnect: "17521"
 																	} );
+																
+																	$("form#cispa_reportback input#emailzz").val($('form#call input.email').val());
+																
 																	$("p.instru").hide();
 																	$("p.script").show();
+																	$("form")
+																	$("form#cispa_reportback").show();
 																	$.cookie("privacy_call", "yes");
 																	
 																} else {
@@ -260,6 +281,7 @@
 </div>
 <div class="footer">
 	<p class="copyleft ospdin" style="font-size: 35px; line-height:1.2; font-weight: bold; width: 700px; margin: 0 auto;">This campaign is a joint effort of: <a href="http://fightforthefuture.org" >Fight for the Future</a>, <a href="http://democrats.com">Democrats.com</a>, <a href="http://www.libertycoalition.net/">The Liberty Coalition</a>, <a href="http://theeca.com/">Entertainment Consumers Association</a></p>
+	<p style="text-align: center; margin-top: 20px;"><a href="http://fightforthefuture.org/privacy" style="color: #fff;">Privacy Policy</a></p>
 </div>
 
 </div>
