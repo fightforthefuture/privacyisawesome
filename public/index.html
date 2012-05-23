@@ -115,7 +115,7 @@
 														<input type="hidden" name="mconnect" value="17521" />
 														<div id="errors" style="display: none;"></div>
 														<input type="text" name="person[phone]" placeholder="phone number" class="required phoneUS" style="width: 24%;"/>
-														<input type="text" name="person[zip]" placeholder="zip" style="width: 15%;" />
+														<input type="text" name="person[postal_code]" placeholder="zip" style="width: 15%;" />
 														<input type="text" name="person[email]" placeholder="Email (optional)" class="email" style="width: 27%;" />
 														<button type="submit" id="findursenator" />Find your senator</button>
 														</form>
@@ -142,7 +142,7 @@
 																	$("form#call").hide();
 																	$.post("https://secure.mcommons.com/profiles/join", { 
 																		"person[phone]": $('form#call input.phoneUS').val(), 
-																		"person[zip]": $('form#call input.zip').val(), 
+																		"person[postal_code]": $('form#call input.zip').val(), 
 																		"person[email]": $('form#call input.email').val(), 																		
 																		mconnect: "17521"
 																	} );
