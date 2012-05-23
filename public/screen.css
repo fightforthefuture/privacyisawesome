@@ -293,3 +293,5 @@ a.btn, button {cursor: pointer;}
 
 p.copyleft a {color: #fff;}
 p.copyleft {font-size: 14px; text-align: center; width: 100%; padding-top: 20px; color: #fff;}
+
+#errors {padding: 3px; background: red; text-align: center;}
