@@ -7,12 +7,118 @@
 <title>Privacy is Awesome. Kill CISPA.</title>
 			<meta property="og:title" content="Privacy is Awesome. Kill CISPA." />
 		  <meta property="og:description" content="Congress is trying to end privacy online, and we've got just one shot to stop them -- Memorial Day recess. The Senate votes on the bill in early June. That doesn't give us much time, but if thousands of people call now, we can win. In short, call the Senate in droves, meet with them. Kill the bill." />
-		  <meta property="og:image" content="http://www.privacyisawesome.com/images/fbshare.png" />
+		  <meta property="og:image" content="http://www.privacyisawesome.com/flyer.png" />
 		  <meta property="og:url" content="http://www.privacyisawesome.com" />
 		  <meta property="og:type" content="article" />
 			<meta property="fb:admins" content="678090273"/>
 
+<script>
 
+//IPInfoDB jQuery JSON query example
+	//Tested with FF 3.5, Opera 10, Chome 5 and IE 8
+	//Geolocation data is stored as serialized JSON in a cookie
+	//Bug reports : http://forum.ipinfodb.com/viewforum.php?f=7
+	function geolocate(timezone, cityPrecision) {
+	  var key = 'a809ea57ae42411b030ca10dafd412b9653886d6fc4859f7ef6d924b1d8e2b2d';
+	  var api = (cityPrecision) ? "ip-city" : "ip-country";
+	  var domain = 'api.ipinfodb.com';
+	  var version = 'v3';
+	  var url = "http://" + domain + "/" + version + "/" + api + "/?key=" + key + "&format=json" + "&callback=?";
+	  var geodata;
+	  var JSON = JSON || {};
+
+	  // implement JSON.stringify serialization
+	  JSON.stringify = JSON.stringify || function (obj) {
+	    var t = typeof (obj);
+	    if (t != "object" || obj === null) {
+	      // simple data type
+	      if (t == "string") obj = '"'+obj+'"';
+	        return String(obj);
+	    } else {
+	    // recurse array or object
+	      var n, v, json = [], arr = (obj && obj.constructor == Array);
+	      for (n in obj) {
+	        v = obj[n]; t = typeof(v);
+	        if (t == "string") v = '"'+v+'"';
+	        else if (t == "object" && v !== null) v = JSON.stringify(v);
+	        json.push((arr ? "" : '"' + n + '":') + String(v));
+	      }
+	      return (arr ? "[" : "{") + String(json) + (arr ? "]" : "}");
+	    }
+	  };
+
+	  // implement JSON.parse de-serialization
+	  JSON.parse = JSON.parse || function (str) {
+	    if (str === "") str = '""';
+	      eval("var p=" + str + ";");
+	      return p;
+	  };
+
+	  //Check if cookie already exist. If not, query IPInfoDB
+	  this.checkcookie = function(callback) {
+	    geolocationCookie = getCookie('geolocation');
+	    if (!geolocationCookie) {
+	      getGeolocation(callback);
+	    } else {
+	      geodata = JSON.parse(geolocationCookie);
+	      callback();
+	    }
+	  }
+
+	  //Return a geolocation field
+	  this.getField = function(field) {
+	    try {
+	      return geodata[field];
+	    } catch(err) {}
+	  }
+
+	  //Request to IPInfoDB
+	  function getGeolocation(callback) {
+	    try {
+	      $.getJSON(url,
+	      function(data){
+	        if (data['statusCode'] == 'OK') {
+	          geodata = data;
+	          JSONString = JSON.stringify(geodata);
+	          setCookie('geolocation', JSONString, 365);
+	          callback();
+	        }
+	      });
+	    } catch(err) {}
+	  }
+
+	  //Set the cookie
+	  function setCookie(c_name, value, expire) {
+	    var exdate=new Date();
+	    exdate.setDate(exdate.getDate()+expire);
+	    document.cookie = c_name+ "=" +escape(value) + ((expire==null) ? "" : ";expires="+exdate.toGMTString());
+	  }
+
+	  //Get the cookie content
+	  function getCookie(c_name) {
+	    if (document.cookie.length > 0 ) {
+	      c_start=document.cookie.indexOf(c_name + "=");
+	      if (c_start != -1){
+	        c_start=c_start + c_name.length+1;
+	        c_end=document.cookie.indexOf(";",c_start);
+	        if (c_end == -1) {
+	          c_end=document.cookie.length;
+	        }
+	        return unescape(document.cookie.substring(c_start,c_end));
+	      }
+	    }
+	    return '';
+	  }
+	}
+	
+	function wrong_country() {
+	console.log("maybe not US");	
+	}
+	
+
+
+
+</script>
 
 
 
@@ -81,13 +187,37 @@
 				</div>
 
 				<div class="take">
-					<p>	Take  5  steps to kill CISPA, the Cyber Security Act and the SECURE IT Act and save privacy</p>
+					<p>	Take  5  steps to kill CISPA, the Cyber Security Act and the SECURE IP Act and save privacy</p>
 				</div>
 			</div>
 
+			<div class="step third">
+				<input type="checkbox"  class="done reminder_form_thing" />
+
+				<p class="details">Keep calling both your Senators once per day until they each give us a meeting.  We're serious: the more calls, the more likely they are to think twice.  Can you do it?  If so, sign up here so we can tell you when we get a meeting. </p>
+
+			
+					<form class="noformz action_form" name="reminder" id="reminder" method="POST" action="http://a.fightforthefuture.org/act/" accept-charset="utf-8">
+						<input placeholder="email" name="email" style="width: 46%;"/>
+						<input placeholder="zipcode" name="zip" />
+						<input type="hidden" name="utf8" value="&#x2714;">
+						<input type="hidden" name="page" value="PIA_reminders_placeholder">
+
+						<input type="hidden" name="lists" value="7" />
+						
+						<button type="submit" />Get reminder</button>
+		
+						
+					</form>
+	
+			
+			</div><!-- close .step .third -->
+	
+	
+	
 	
 			<div class="preface">	
-				<p class="instructions"><strong>We can kill CISPA, the Cyber Security Act and the SECURE IT Act like we killed SOPA, but we've got just one shot -- Memorial Day recess.</strong> The Senate votes on the bill in early June. That doesn't give us much time, but if thousands of people call now, we can win. In short, call the Senate in droves, meet with them. We beat CISPA, the Cyber Security Act and the SECURE IT Act.</p>
+				<p class="instructions"><strong>We can kill CISPA, the Cyber Security Act and the SECURE IP Act like we killed SOPA, but we've got just one shot -- Memorial Day recess.</strong> The Senate votes on the bill in early June. That doesn't give us much time, but if thousands of people call now, we can win. In short, call the Senate in droves, meet with them. We beat CISPA, the Cyber Security Act and the SECURE IP Act.</p>
 
 				<div class="dates">5/28 - 6/1 - Senate votes in early June</div>
 			</div>
@@ -176,7 +306,7 @@
 
 				<div class="step second">
 					<input type="checkbox"  class="done letter_form_thing"/>
-					<p class="details">Keep the pressure on. Email your senators' offices right now about CISPA, the Cyber Security Act and the SECURE IT Act. </p>
+					<p class="details">Keep the pressure on. Email your senators' offices right now about CISPA, the Cyber Security Act and the SECURE IP Act. </p>
 
 
 
@@ -203,7 +333,7 @@
 
 								</script>
 							</form>
-								<p>I am writing to you as your constituent. I strongly disagree with cybersecurity legislation that would put my privacy at risk. I am asking the Senator to vote NO on S. 2105, the SECURE IT Act, or any cybersecurity bill that infringes on my civil liberties. The right to privacy is very important to me, and I think there are better approaches to cybersecurity. We are requesting a meeting with the Senator for my group to speak to him. I would also like to know about any public events or if staff are available to meet with me. What is the best way to go about that?</p>
+								<p>I am writing to you as your constituent. I strongly disagree with cybersecurity legislation that would put my privacy at risk. I am asking the Senator to vote NO on S. 2105, the SECURE IP Act, or any cybersecurity bill that infringes on my civil liberties. The right to privacy is very important to me, and I think there are better approaches to cybersecurity. We are requesting a meeting with the Senator for my group to speak to him. I would also like to know about any public events or if staff are available to meet with me. What is the best way to go about that?</p>
 				
 							<p class="disclosure">Email is optional. Fight for the Future will update you about this and related campaigns. </p>
 				
@@ -285,8 +415,10 @@
 </div>
 
 </div>
+<script src="/modal.js"></script>
 
 <script>
+// displayAmericanCensorshipModal()
 if ($.cookie("privacy_call") == "yes") {
 	$('.call_form_thing').attr('checked', true);
 	}	
@@ -307,6 +439,28 @@ if ($.cookie("privacy_souvenir") == "yes") {
 		$('.social_form_thing').attr('checked', true);
 		}
 
+
+
+
+			//function geolocate(timezone, cityPrecision)
+			var visitorGeolocation = new geolocate(false, true);
+
+			//Check for cookie and run a callback function to execute after geolocation is read either from cookie or IPInfoDB API
+			//$(document).ready(function(){alert(visitorGeolocation.getField('countryCode'))}) doesnt work with google Chrome, this is why a callback is used instead
+			var callback = function(){
+				// alert('Visitor country code : ' + visitorGeolocation.getField('countryCode'));
+				// $('#country').text(visitorGeolocation.getField('countryCode'));
+				if (visitorGeolocation.getField('countryCode') != 'US') {
+					wrong_country();
+					$('.wrong').show();
+				} 
+		};
+			visitorGeolocation.checkcookie(callback);
+			$('.wrong').show();
+			$('.wrong').click(function() {
+			  wrong_country();
+			});
+			
 </script>
 
 <script type="text/javascript">
