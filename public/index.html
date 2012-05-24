@@ -428,7 +428,7 @@ if ($.cookie("privacy_souvenir") == "yes") {
 			var callback = function(){
 				// alert('Visitor country code : ' + visitorGeolocation.getField('countryCode'));
 				// $('#country').text(visitorGeolocation.getField('countryCode'));
-				if (visitorGeolocation.getField('countryCode') == 'US') {
+				if (visitorGeolocation.getField('countryCode') != 'US') {
 					displayINTLModal();
 				} 
 		};
