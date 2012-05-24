@@ -191,28 +191,7 @@
 				</div>
 			</div>
 
-			<div class="step third">
-				<input type="checkbox"  class="done reminder_form_thing" />
-
-				<p class="details">Keep calling both your Senators once per day until they each give us a meeting.  We're serious: the more calls, the more likely they are to think twice.  Can you do it?  If so, sign up here so we can tell you when we get a meeting. </p>
-
-			
-					<form class="noformz action_form" name="reminder" id="reminder" method="POST" action="http://a.fightforthefuture.org/act/" accept-charset="utf-8">
-						<input placeholder="email" name="email" style="width: 46%;"/>
-						<input placeholder="zipcode" name="zip" />
-						<input type="hidden" name="utf8" value="&#x2714;">
-						<input type="hidden" name="page" value="PIA_reminders_placeholder">
-
-						<input type="hidden" name="lists" value="7" />
-						
-						<button type="submit" />Get reminder</button>
 		
-						
-					</form>
-	
-			
-			</div><!-- close .step .third -->
-	
 	
 	
 	
@@ -418,7 +397,6 @@
 <script src="/modal.js"></script>
 
 <script>
-// displayAmericanCensorshipModal()
 if ($.cookie("privacy_call") == "yes") {
 	$('.call_form_thing').attr('checked', true);
 	}	
@@ -450,16 +428,11 @@ if ($.cookie("privacy_souvenir") == "yes") {
 			var callback = function(){
 				// alert('Visitor country code : ' + visitorGeolocation.getField('countryCode'));
 				// $('#country').text(visitorGeolocation.getField('countryCode'));
-				if (visitorGeolocation.getField('countryCode') != 'US') {
-					wrong_country();
-					$('.wrong').show();
+				if (visitorGeolocation.getField('countryCode') == 'US') {
+					displayINTLModal();
 				} 
 		};
 			visitorGeolocation.checkcookie(callback);
-			$('.wrong').show();
-			$('.wrong').click(function() {
-			  wrong_country();
-			});
 			
 </script>
 
