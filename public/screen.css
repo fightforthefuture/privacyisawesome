@@ -300,4 +300,11 @@ a.btn, button {cursor: pointer;}
 p.copyleft a {color: orange;}
 p.copyleft {font-size: 14px; text-align: center; width: 100%; padding-top: 40px; color: #fff;}
 
+/*Ali's code START*/
+.label{ display: block; font-family: Helvetica, arial, sans-serif; font-size: 16px; font-weight: bold; text-align: center; color: black; margin-bottom: 20px;}
+.embed{display: inline; width: auto; float: left; margin-right: 15px;}
+				.label{display: block; font-family: Helvetica, arial, sans-serif; font-size: 16px; font-weight: bold; text-align: center; color: black; }
+				.getit{font-family: Helvetica, arial, sans-serif; font-size: 16px; font-weight: bold; text-align: center; color: #D95220;}
+/*Ali's code END*/
+
 #errors {padding: 3px; background: red; text-align: center;}
