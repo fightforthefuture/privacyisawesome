@@ -305,6 +305,16 @@ p.copyleft {font-size: 14px; text-align: center; width: 100%; padding-top: 40px;
 .embed{display: inline; width: auto; float: left; margin-right: 15px;}
 				.label{display: block; font-family: Helvetica, arial, sans-serif; font-size: 16px; font-weight: bold; text-align: center; color: black; }
 				.getit{font-family: Helvetica, arial, sans-serif; font-size: 16px; font-weight: bold; text-align: center; color: #D95220;}
+				
+#tag{
+width: 67px;
+height: 228px;
+position:fixed;
+left: 0px;
+z-index: 500;
+margin-top: 320px;
+background: url('/images/fftf_tag.png');
+}
 /*Ali's code END*/
 
 #errors {padding: 3px; background: red; text-align: center;}
