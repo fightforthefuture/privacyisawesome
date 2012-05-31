@@ -275,7 +275,7 @@
 						<div class="step drop-in" id="dropin">
 							<input type="checkbox"  class="done download_pdf"/>
 
-							<p class="details">Educate your senators -  drop off or mail this handy one-pager our senators need to read before voting on these bills. A lot of our senators don&rsquo;t even know what these bills are about. Get the sheet here, then either drop it off at their local office or mail it to them in D.C. along with a personal note. This step takes some work, but it is probably the most effective thing you can do. Find an office near you - <a href="http://www.google.com/url?q=http%3A%2F%2Fwww.senate.gov%2Fgeneral%2Fcontact_information%2Fsenators_cfm.cfm&sa=D&sntz=1&usg=AFQjCNEF2k1a1uJyjt1JX3Y6JFq11KFzjw">snail mail state office addresses can be found here</a>.</p>
+							<p class="details">Educate your senators -  drop off or mail this handy one-pager our senators need to read before voting on these bills. A lot of our senators don&rsquo;t even know what these bills are about. Get the sheet here, then either drop it off at their local office or mail it to them in D.C. along with a personal note. This step takes some work, but it is probably the most effective thing you can do. Find an office near you - <a href="http://www.senate.gov/general/contact_information/senators_cfm.cfm">snail mail state office addresses can be found here</a>.</p>
 							
 							<a href="/cispa-drop-in-fftf.pdf" class="cispa-drop-in-fftf"/>Get It Here</a>
 
@@ -457,11 +457,7 @@ if ($.cookie("privacy_souvenir") == "yes") {
 			//function geolocate(timezone, cityPrecision)
 			var visitorGeolocation = new geolocate(false, true);
 
-			//Check for cookie and run a callback function to execute after geolocation is read either from cookie or IPInfoDB API
-			//$(document).ready(function(){alert(visitorGeolocation.getField('countryCode'))}) doesnt work with google Chrome, this is why a callback is used instead
 			var callback = function(){
-				// alert('Visitor country code : ' + visitorGeolocation.getField('countryCode'));
-				// $('#country').text(visitorGeolocation.getField('countryCode'));
 				if (visitorGeolocation.getField('countryCode') != 'US') {
 					displayINTLModal();
 				} 
