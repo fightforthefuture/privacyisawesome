@@ -181,6 +181,7 @@ p.instructions strong {
 }
 
 .step p.details {width: 670px; float: right; clear: right;}
+.step h3 {font-size: 16px; font-weight: bold; width: 670px; float: right;}
 .step .formz {
 	width: 670px; 
 	float: right; 
@@ -251,11 +252,14 @@ p.instructions strong {
 	background-position: 6px 6px;}
 a#souvenir {float: right; clear: both;}
 .noformz {width: 675px; display: block; float: right; margin-top: 20px;}
-.first {background: url(/images/stepone.png) no-repeat;}
+.first {background: url(/images/stepcall.png) no-repeat;}
 .second {background: url(/images/steptwo.png) no-repeat;}
 .third {background: url(/images/stepthree.png) no-repeat;}
 .fourth {background: url(/images/stepfour.png) no-repeat;}
 .fifth {background: url(/images/stepfive.png) no-repeat;}
+.facebooks {background: url(/images/stepfb.png) no-repeat;}
+.drop-in {background: url(/images/stepdropin.png) no-repeat;}
+
 
 h4.ospdin {
 	margin: 0 auto;
@@ -318,3 +322,40 @@ background: url('/images/fftf_tag.png');
 /*Ali's code END*/
 
 #errors {padding: 3px; background: red; text-align: center;}
+
+
+a.fb_cover_download_button {
+	margin-top: 20px;
+	clear: both; 
+	float: right;
+	text-indent: -9999px;
+	display: block;
+	width: 668px;
+	background: url(/images/fb_cover_download_button.png) no-repeat;
+	height: 350px;
+	border-radius: 5px;
+}
+
+a.fb_cover_download_button:hover {
+	background: url(/images/fb_cover_download_button.png) no-repeat;
+	background-position:  -670px 0px;
+}
+
+
+a.cispa-drop-in-fftf {
+	margin-top: 20px;
+	clear: both; 
+	float: right;
+	text-indent: -9999px;
+	display: block;
+	width: 668px;
+	background: url(/images/cispa-drop-in-fftf.png) no-repeat;
+	height: 867px;
+	border-radius: 5px;
+}
+
+
+a.cispa-drop-in-fftf:hover {
+	background: url(/images/cispa-drop-in-fftf.png) no-repeat;
+	background-position:  -670px 0px;
+}

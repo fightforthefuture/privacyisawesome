@@ -207,7 +207,7 @@
 	
 	
 			<div class="preface">	
-				<p class="instructions"><strong>We can kill CISPA, the Cyber Security Act and the SECURE IT Act like we killed SOPA, but we've got just one shot -- Memorial Day recess.</strong> The Senate votes on the bill in early June. That doesn't give us much time, but if thousands of people call now, we can win. In short, call the Senate in droves, meet with them. We beat CISPA, the Cyber Security Act and the SECURE IT Act.</p>
+				<p class="instructions"><strong>We can kill <a href="http://www.google.com/url?q=http%3A%2F%2Fwww.opencongress.org%2Fbill%2F112-h3523%2Fshow&sa=D&sntz=1&usg=AFQjCNE5gwllrBqn3CKo4aEUYr9BQW3r5A">CISPA</a> and <a href="http://www.google.com/url?q=http%3A%2F%2Fwww.opencongress.org%2Fbill%2F112-s2105%2Fshow&sa=D&sntz=1&usg=AFQjCNEd2kBkNSEoPSyeieYRvcJhsnjuZA">S. 2105</a> like we killed SOPA, but we don't have much time.</strong> The Senate will be back in DC to vote on this bill in a matter of days, but if thousands of people make calls, drop in at their senators’ offices while they’re in-state for Memorial Day recess, and help spread the word, we can win. In short, contact the Senate in droves, tell your friends. We beat CISPA and its derivative Senate bills. </p>
 
 				<div class="dates">5/28 - 6/1 - Senate votes in early June</div>
 			</div>
@@ -218,96 +218,9 @@
 				
 
 						
-						
-				<div class="step first">
-					<input type="checkbox"  class="done call_form_thing" />
-				
-					<p class="details">Call your senators, tell them you oppose Lieberman-Collins, and ask for a meeting or information about an event during the Memorial Day recess.  This tells Senators that their constituents strongly oppose the bill. And it's the first step to getting a constituent meeting, perhaps the most powerful way to change a Senator's mind (if you can't do a meeting, no problem, others can--just get a date and time!)
-
-					</p>
-						<div class="formz">
-							<span class="buffer">
-								<div id="what_to_say">
-								</div>
-						<p class="instru">Enter your phone number and we'll connect you to your Senator. We'll give you a script, numbers to call, and a form to report back (if you get a meeting, or if they say something useful).</p>
-						<p class="script" style="display: none;"><strong style="display: block; margin-bottom: 10px; font-weight: normal;">We're connecting you right now, here's a suggestion of what to say:</strong>
-
-
-"Hi, my name is [______], and I am calling from [my town, my state]. I want to schedule a meeting with the senator or her/his staff over the Memorial Day recess to discuss a cybersecurity bill that is going to be voted on.  <br style="margin-bottom: 10px;"/>
-
-What is the best way to go about doing that?" <br style="margin-bottom: 10px;"/>
-
-If they say no to a meeting, ask if the senator has any public events scheduled for over the recess that you could attend.  <br style="margin-bottom: 10px;"/>
-
-If they ask for more information about your concerns, tell them you oppose the Lieberman-Collins cybersecurity bill (S.2105) and any cybersecurity legislation that infringes on your right to privacy."</p>
-														<div id="target_checkboxes"></div><div id="ak-survey_question"></div>
-														<form action="https://secure.mcommons.com/profiles/join" method="post" id="call">
-														<input type="hidden" name="redirect_to" value="http://mobilecommons.com/redirect_to_instructions" />
-														<input type="hidden" name="mconnect" value="17521" />
-														<div id="errors" style="display: none;"></div>
-														<input type="text" name="person[phone]" placeholder="phone number" class="required phoneUS" style="width: 24%;"/>
-														<input type="text" name="person[postal_code]" placeholder="zip" style="width: 15%;" class="zip" />
-														<input type="text" name="person[email]" placeholder="Email (optional)" class="email" style="width: 27%;" />
-														<button type="submit" id="findursenator" />Find your senator</button>
-														</form>
-														<form class="action_form" id="cispa_reportback" name="act" method="POST" action="http://a.fightforthefuture.org/act/" accept-charset="utf-8" style="display: none;" >
-														<input type="hidden" name="utf8" value="&#x2714;">
-
-														<input id="id_name" type="text" name="name" placeholder="your name" style="width: 261px;"/>
-												    <input id="emailzz" type="email" name="email" placeholder="your email" style="width: 261px;"/>
-														<textarea placeholder="Report how your call went" name="user_msg"></textarea>
-
-														<input type="hidden" name="page" value="cispa_reportback">
-
-														<input type="hidden" name="lists" value="7" />
-														<button type="submit">Tell us about your call</button>
-														</form>
-														
-														<script>
-														// Send something like this on submit, hide the form and show the script
-														
-														$("button#findursenator").click(function (e) {
-																e.preventDefault();
-																$("#errors").hide();
-																if (isValid($("input.phoneUS").val())) {
-																	$("form#call").hide();
-																	$.post("https://secure.mcommons.com/profiles/join", { 
-																		"person[phone]": $('form#call input.phoneUS').val(), 
-																		"person[postal_code]": $('form#call input.zip').val(), 
-																		"person[email]": $('form#call input.email').val(), 																		
-																		mconnect: "17521"
-																	} );
-																
-																	$("form#cispa_reportback input#emailzz").val($('form#call input.email').val());
-																
-																	$("p.instru").hide();
-																	$("p.script").show();
-																	$("form")
-																	$("form#cispa_reportback").show();
-																	$.cookie("privacy_call", "yes");
-																	
-																} else {
-																	$("#errors").show();
-																	$("#errors").append("<p>This doesn't look like a valid phone number, can you double check it?");
-																	}
-																
-														       //
-														    });
-														
-														</script>
-
-						</form>
-						<p class="disclosure">Email is optional. Fight for the Future will update you about this and related campaigns. </p>
-						
-						
-		
-					</div>
-				</div><!-- close .step .first -->
-
-
-				<div class="step second" id="write">
+					<div class="step second" id="write">
 					<input type="checkbox"  class="done letter_form_thing"/>
-					<p class="details">Keep the pressure on. Email your senators' offices right now about CISPA, the Cyber Security Act and the SECURE IT Act. </p>
+						<p class="details">We need everyone to email your senators right now about CISPA, the Cybersecurity Act, and the SECURE IT Act.</p>
 
 
 
@@ -334,44 +247,133 @@ If they ask for more information about your concerns, tell them you oppose the L
 
 								</script>
 							</form>
-								<p>I am writing to you as your constituent. I strongly disagree with cybersecurity legislation that would put my privacy at risk. I am asking the Senator to vote NO on S. 2105, the SECURE IT Act, or any cybersecurity bill that infringes on my civil liberties. The right to privacy is very important to me, and I think there are better approaches to cybersecurity. We are requesting a meeting with the Senator for my group to speak to him. I would also like to know about any public events or if staff are available to meet with me. What is the best way to go about that?</p>
+								<p>I am writing to you as your constituent. I strongly disagree with cybersecurity legislation that would put my privacy at risk. I am asking the Senator to vote NO on S. 2105, the SECURE IT Act, or any cybersecurity bill that infringes on my civil liberties. These bills reverse decades of consumer privacy laws, violate net neutrality, and would create a vast program of personal data sharing that would treat all internet users as criminals. The right to privacy is very important to me, and I think there are better approaches to cybersecurity.</p>
 				
-							<p class="disclosure">Email is optional. Fight for the Future will update you about this and related campaigns. </p>
+							<p class="disclosure">Fight for the Future will update you about this and related campaigns. </p>
 				
 						</form>
 					</span>
 					</div>
 				</div><!-- close .step .second -->
-
-				<div class="step third">
-					<input type="checkbox"  class="done reminder_form_thing" />
-	
-					<p class="details">Keep calling both your Senators once per day until they each give us a meeting.  We're serious: the more calls, the more likely they are to think twice.  Can you do it?  If so, sign up here so we can tell you when we get a meeting. </p>
-	
 				
-						<form class="noformz action_form" name="reminder" id="reminder" method="POST" action="http://a.fightforthefuture.org/act/" accept-charset="utf-8">
-							<input placeholder="email" name="email" style="width: 46%;"/>
-							<input placeholder="zipcode" name="zip" />
-							<input type="hidden" name="utf8" value="&#x2714;">
-							<input type="hidden" name="page" value="PIA_reminders_placeholder">
+				
+				
+				
+				
+					<div class="step facebooks">
+						<input type="checkbox"  class="done cover_photo"/>
 
-							<input type="hidden" name="lists" value="7" />
-							
-							<button type="submit" />Get reminder</button>
-							<script>
-							// Set a cookie on form submit
-							$("form#reminder").submit(function() {
-									$.cookie("privacy_reminder", "yes");
-									return true;
-							  });
+						<p class="details">Your Facebook profile, Your FBI file. Before doing anything else, join the Facebook protest. If you care about stopping CISPA, change your Facebook cover photo to this -- show the world how creepy Facebook becomes when the government has all our data. This is probably the one thing you can do that will make your friends take action. </p>
 
-							</script>
+					<a href="/cispa-fftf-cover-image.png" class="fb_cover_download_button">Download FB Cover Image</a>
+				
+						</div>
+						
+						
+						
+						
+						<div class="step drop-in">
+							<input type="checkbox"  class="done download_pdf"/>
+
+							<p class="details">Educate your senators -  drop off or mail this handy one-pager our senators need to read before voting on these bills. A lot of our senators don’t even know what these bills are about. Get the sheet here, then either drop it off at their local office or mail it to them in D.C. along with a personal note. This step takes some work, but it is probably the most effective thing you can do. Find an office near you - <a href="http://www.google.com/url?q=http%3A%2F%2Fwww.senate.gov%2Fgeneral%2Fcontact_information%2Fsenators_cfm.cfm&sa=D&sntz=1&usg=AFQjCNEF2k1a1uJyjt1JX3Y6JFq11KFzjw">snail mail state office addresses can be found here</a>.</p>
 							
-						</form>
+							<a href="/cispa-drop-in-fftf.pdf" class="cispa-drop-in-fftf"/>Get It Here</a>
+
+
+							</div>
+
+						
+						
+						
+						<div class="step first">
+		<input type="checkbox"  class="done call_form_thing" />
+
+		<p class="details">Call your senators, tell them you oppose Lieberman-Collins, and ask for a meeting or information about an event during the Memorial Day recess.  This tells Senators that their constituents strongly oppose the bill. And it's the first step to getting a constituent meeting, perhaps the most powerful way to change a Senator's mind (if you can't do a meeting, no problem, others can--just get a date and time!)
+
+		</p>
+			<div class="formz">
+				<span class="buffer">
+					<div id="what_to_say">
+					</div>
+			<p class="instru">Enter your phone number and we'll connect you to your Senator. We'll give you a script, numbers to call, and a form to report back (if you get a meeting, or if they say something useful).</p>
+			<p class="script" style="display: none;"><strong style="display: block; margin-bottom: 10px; font-weight: normal;">We're connecting you right now, here's a suggestion of what to say:</strong>
+
+
+"Hi, my name is ____ . I’m calling from (town, state). I want to urge the senator to vote NO on CISPA, the Cybersecurity Act, and the SECURE IT. These bills all violate my right to privacy by erasing decades of privacy laws and giving companies legal immunity for sharing my information with the government. Please vote NO on these bills and any cybersecurity legislation that violates basic civil liberties.  <br style="margin-bottom: 10px;"/>
+
+What is the best way to go about doing that?" <br style="margin-bottom: 10px;"/>
+
+If they say no to a meeting, ask if the senator has any public events scheduled for over the recess that you could attend.  <br style="margin-bottom: 10px;"/>
+
+If they ask for more information about your concerns, tell them you oppose the Lieberman-Collins cybersecurity bill (S.2105) and any cybersecurity legislation that infringes on your right to privacy."</p>
+											<div id="target_checkboxes"></div><div id="ak-survey_question"></div>
+											<form action="https://secure.mcommons.com/profiles/join" method="post" id="call">
+											<input type="hidden" name="redirect_to" value="http://mobilecommons.com/redirect_to_instructions" />
+											<input type="hidden" name="mconnect" value="17521" />
+											<div id="errors" style="display: none;"></div>
+											<input type="text" name="person[phone]" placeholder="phone number" class="required phoneUS" style="width: 24%;"/>
+											<input type="text" name="person[postal_code]" placeholder="zip" style="width: 15%;" class="zip" />
+											<input type="text" name="person[email]" placeholder="Email (optional)" class="email" style="width: 27%;" />
+											<button type="submit" id="findursenator" />Find your senator</button>
+											</form>
+											<form class="action_form" id="cispa_reportback" name="act" method="POST" action="http://a.fightforthefuture.org/act/" accept-charset="utf-8" style="display: none;" >
+											<input type="hidden" name="utf8" value="&#x2714;">
+
+											<input id="id_name" type="text" name="name" placeholder="your name" style="width: 261px;"/>
+									    <input id="emailzz" type="email" name="email" placeholder="your email" style="width: 261px;"/>
+											<textarea placeholder="Report how your call went" name="user_msg"></textarea>
+
+											<input type="hidden" name="page" value="cispa_reportback">
+
+											<input type="hidden" name="lists" value="7" />
+											<button type="submit">Tell us about your call</button>
+											</form>
+
+											<script>
+											// Send something like this on submit, hide the form and show the script
+
+											$("button#findursenator").click(function (e) {
+													e.preventDefault();
+													$("#errors").hide();
+													if (isValid($("input.phoneUS").val())) {
+														$("form#call").hide();
+														$.post("https://secure.mcommons.com/profiles/join", { 
+															"person[phone]": $('form#call input.phoneUS').val(), 
+															"person[postal_code]": $('form#call input.zip').val(), 
+															"person[email]": $('form#call input.email').val(), 																		
+															mconnect: "17521"
+														} );
+
+														$("form#cispa_reportback input#emailzz").val($('form#call input.email').val());
+
+														$("p.instru").hide();
+														$("p.script").show();
+														$("form")
+														$("form#cispa_reportback").show();
+														$.cookie("privacy_call", "yes");
+
+													} else {
+														$("#errors").show();
+														$("#errors").append("<p>This doesn't look like a valid phone number, can you double check it?");
+														}
+
+											       //
+											    });
+
+											</script>
+
+			</form>
+			<p class="disclosure">Email is optional. Fight for the Future will update you about this and related campaigns. </p>
+
+
+
+		</div>
+	</div><!-- close .step .first -->
+						
+						
+						
 		
-				
-				</div><!-- close .step .third -->
-
+		
 				<div class="step fourth">
 					<input type="checkbox"  class="done souvenir_form_thing" />
 	
