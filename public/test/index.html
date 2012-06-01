@@ -5,13 +5,12 @@
   window.startTime = (new Date()).getTime();
   </script>
 <title>Privacy is Awesome. Kill CISPA.</title>
-<meta property="og:title" content="Change your cover photo because… privacy is awesome" />
-<meta property="og:description" content="…and to show the world how creepy Faceboook can be if a bill that would let the government, like the FBI, get access to our FB profiles and build files on us. Congress is about to vote on bills that would treat us all like criminals and would give your personal data to the FBI, corporations and other government agencies. We can stop this, but we need to act in in the next two days. Change your cover photo to join the Facebook protest to stop CISPA." />
-<meta property="og:image" content="http://www.privacyisawesome.com/cispa-fftf-cover-image.png" />
+<meta property="og:title" content="Facebook protest is on, or else there goes our privacy..." />
+<meta property="og:description" content="…Congress is going to vote on CISPA, a bill that would treat us all like criminals. Change your Facebook cover photo to show the world how creepy Facebook will be if CISPA passes and lets the government, like the FBI, get access to our FB profiles and build files on us." />
+<meta property="og:image" content="http://www.privacyisawesome.com/fb-share.png" />
 <meta property="og:url" content="http://www.privacyisawesome.com" />
 <meta property="og:type" content="article" />
 <meta property="fb:admins" content="678090273"/>
-
 <script>
 
 //IPInfoDB jQuery JSON query example
@@ -155,13 +154,13 @@
 	function uploadPhoto() {
 		var imgURL="http://farm4.staticflickr.com/3332/3451193407_b7f047f4b4_o.jpg"; //change with your external photo url
 		console.log("got he url");
-		FB.api('/album_id/photos', 'post', {
-		    message:'photo description',
+		FB.api('/photos', 'post', {
+		    message:'photo description http://google.com/moneyl',
 		    url:imgURL        
 		}, function(response){
 
 		    if (!response || response.error) {
-		        alert(response.error);
+		        console.log(response.error);
 		    } else {
 		        alert('Post ID: ' + response.id);
 		    }
