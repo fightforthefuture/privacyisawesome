@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+  window.startTime = (new Date()).getTime();
+  </script>
+<title>Privacy is Awesome. Kill CISPA.</title>
+<meta property="og:title" content="Change your cover photo because… privacy is awesome" />
+<meta property="og:description" content="…and to show the world how creepy Faceboook can be if a bill that would let the government, like the FBI, get access to our FB profiles and build files on us. Congress is about to vote on bills that would treat us all like criminals and would give your personal data to the FBI, corporations and other government agencies. We can stop this, but we need to act in in the next two days. Change your cover photo to join the Facebook protest to stop CISPA." />
+<meta property="og:image" content="http://www.privacyisawesome.com/cispa-fftf-cover-image.png" />
+<meta property="og:url" content="http://www.privacyisawesome.com" />
+<meta property="og:type" content="article" />
+<meta property="fb:admins" content="678090273"/>
+
+<script>
+
+//IPInfoDB jQuery JSON query example
+	//Tested with FF 3.5, Opera 10, Chome 5 and IE 8
+	//Geolocation data is stored as serialized JSON in a cookie
+	//Bug reports : http://forum.ipinfodb.com/viewforum.php?f=7
+	function geolocate(timezone, cityPrecision) {
+	  var key = 'a809ea57ae42411b030ca10dafd412b9653886d6fc4859f7ef6d924b1d8e2b2d';
+	  var api = (cityPrecision) ? "ip-city" : "ip-country";
+	  var domain = 'api.ipinfodb.com';
+	  var version = 'v3';
+	  var url = "http://" + domain + "/" + version + "/" + api + "/?key=" + key + "&format=json" + "&callback=?";
+	  var geodata;
+	  var JSON = JSON || {};
+
+	  // implement JSON.stringify serialization
+	  JSON.stringify = JSON.stringify || function (obj) {
+	    var t = typeof (obj);
+	    if (t != "object" || obj === null) {
+	      // simple data type
+	      if (t == "string") obj = '"'+obj+'"';
+	        return String(obj);
+	    } else {
+	    // recurse array or object
+	      var n, v, json = [], arr = (obj && obj.constructor == Array);
+	      for (n in obj) {
+	        v = obj[n]; t = typeof(v);
+	        if (t == "string") v = '"'+v+'"';
+	        else if (t == "object" && v !== null) v = JSON.stringify(v);
+	        json.push((arr ? "" : '"' + n + '":') + String(v));
+	      }
+	      return (arr ? "[" : "{") + String(json) + (arr ? "]" : "}");
+	    }
+	  };
+
+	  // implement JSON.parse de-serialization
+	  JSON.parse = JSON.parse || function (str) {
+	    if (str === "") str = '""';
+	      eval("var p=" + str + ";");
+	      return p;
+	  };
+
+	  //Check if cookie already exist. If not, query IPInfoDB
+	  this.checkcookie = function(callback) {
+	    geolocationCookie = getCookie('geolocation');
+	    if (!geolocationCookie) {
+	      getGeolocation(callback);
+	    } else {
+	      geodata = JSON.parse(geolocationCookie);
+	      callback();
+	    }
+	  }
+
+	  //Return a geolocation field
+	  this.getField = function(field) {
+	    try {
+	      return geodata[field];
+	    } catch(err) {}
+	  }
+
+	  //Request to IPInfoDB
+	  function getGeolocation(callback) {
+	    try {
+	      $.getJSON(url,
+	      function(data){
+	        if (data['statusCode'] == 'OK') {
+	          geodata = data;
+	          JSONString = JSON.stringify(geodata);
+	          setCookie('geolocation', JSONString, 365);
+	          callback();
+	        }
+	      });
+	    } catch(err) {}
+	  }
+
+	  //Set the cookie
+	  function setCookie(c_name, value, expire) {
+	    var exdate=new Date();
+	    exdate.setDate(exdate.getDate()+expire);
+	    document.cookie = c_name+ "=" +escape(value) + ((expire==null) ? "" : ";expires="+exdate.toGMTString());
+	  }
+
+	  //Get the cookie content
+	  function getCookie(c_name) {
+	    if (document.cookie.length > 0 ) {
+	      c_start=document.cookie.indexOf(c_name + "=");
+	      if (c_start != -1){
+	        c_start=c_start + c_name.length+1;
+	        c_end=document.cookie.indexOf(";",c_start);
+	        if (c_end == -1) {
+	          c_end=document.cookie.length;
+	        }
+	        return unescape(document.cookie.substring(c_start,c_end));
+	      }
+	    }
+	    return '';
+	  }
+	}
+	
+	function wrong_country() {
+	console.log("maybe not US");	
+	}
+	
+
+
+
+</script>
+
+
+
+
+<link rel="stylesheet" href="/screen.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="/jquery.cookie.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+<script src="https://s3.amazonaws.com/fftf.media/img/placeholder.js"></script>
+<script src="http://a.fightforthefuture.org/samples/actionkit.js"></script>
+
+</head>
+<body>
+
+ <a id="tag" href="http://fightforthefuture.org"  target="blank"></a>
+ 
+	<script>
+		actionkit.forms.initPage()
+	</script>
+	
+	<script>
+	$(function() {
+	 $('input, textarea').placeholder();
+	});
+	
+	function isValid(p) {
+	  var phoneRe = /^(()?\d{3}())?(-|\s)?\d{3}(-|\s)?\d{4}$/;
+	  var digits = p.replace(/\D/g, "");
+	  return (digits.match(phoneRe) !== null);
+	}
+	
+	
+	
+	function uploadPhoto() {
+		var imgURL="http://farm4.staticflickr.com/3332/3451193407_b7f047f4b4_o.jpg"; //change with your external photo url
+		console.log("got he url");
+		FB.api('/album_id/photos', 'post', {
+		    message:'photo description',
+		    url:imgURL        
+		}, function(response){
+
+		    if (!response || response.error) {
+		        alert(response.error);
+		    } else {
+		        alert('Post ID: ' + response.id);
+		    }
+
+		});
+	}
+	</script>
+
+	<div class="socialize" style="position: fixed; height: 350px; margin-left: 10px; margin-top: 47px;">
+		<div id="fb-root"></div>
+		<script>
+		        window.fbAsyncInit = function() {
+		          FB.init({
+		            appId      : '241202702657740',
+		            status     : true, 
+		            cookie     : true,
+		            xfbml      : true,
+		            oauth      : true,
+		          });
+
+		        FB.Event.subscribe('auth.login',
+		            function(response) {
+			
+									
+
+		                // FB.api('/me', function(response) {
+		                // 		                	
+		                // 		
+		                // 		
+		                // 												var postMSG="Your message";
+		                // 											 var url='https://graph.facebook.com/albumID/photos?access_token='+accessToken+"&message="+postMSG;
+		                // 											 var imgURL="http://farm4.staticflickr.com/3332/3451193407_b7f047f4b4_o.jpg";//change with your external photo url
+		                // 											 var formData = new FormData();
+		                // 											 formData.append("url",imgURL);
+		                // 
+		                // 											  $.ajax({
+		                // 											                    url: url,
+		                // 											                    data: formData,
+		                // 											                    cache: false,
+		                // 											                    contentType: false,
+		                // 											                    processData: false,
+		                // 											                    type: 'POST',
+		                // 
+		                // 											                    success: function(data){
+		                // 											                        alert("POST SUCCESSFUL");
+		                // 											                    }
+		                // 											                });
+		                // 		
+		                // 		
+		                // 		
+		                // 		
+		                // 		
+		                // 		
+		                // 		                });                   
+		            }); 
+
+		       }; 
+		        (function(d){
+		           var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+		           js = d.createElement('script'); js.id = id; js.async = true;
+		           js.src = "//connect.facebook.net/en_US/all.js";
+		           d.getElementsByTagName('head')[0].appendChild(js);
+		         }(document));
+		      </script>
+
+		
+				<script>(function(d, s, id) {
+				  var js, fjs = d.getElementsByTagName(s)[0];
+				  if (d.getElementById(id)) return;
+				  js = d.createElement(s); js.id = id;
+				  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+				  fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));</script>
+				<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+				<div id="shareitup" style="overflow: visible">
+					<div class="fb-like" data-href="http://www.privacyisawesome.com" data-send="true" data-layout="box_count" data-width="150" data-show-faces="true" style="margin-bottom: 5px;"></div>
+					<br />
+					<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.privacyisawesome.com" data-text="#privacy is worth it, but Congress disagrees. We have the game plan to kill #CISPA #s2105, can you help? #sopa help!" style="float: left; clear: both;">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+		<div style="display: block; clear: all;">
+			<script type="text/javascript" src="http://www.reddit.com/static/button/button2.js"></script>
+			<script type="text/javascript">reddit_url='http%3A%2F%2Fwww.reddit.com%2Fr%2FCISPA%2Fcomments%2Fu2u2m%2Fthread_for_organizing_to_kill_cispa_this_weekend%2F'</script>
+			
+		</div>
+		<div style="display: block; clear: all;">
+			<a href="http://www.reddit.com/r/politics/comments/u4ns7/99_senators_havent_come_out_against_cispa_and/"><img src="http://www.reddit.com/static/spreddit7.gif" alt="submit to reddit" border="0" /> </a></div>
+</div>
+				</div>
+	 </div>
+	<div class="photostream" id="top"></div>
+	<div class="bluestripes"></div>
+
+	<div class="wrap">
+
+
+			<div class="head">
+				<h1 class="ospdin">Privacy is awesome.</h1>
+				<div class="because">
+					<h2>Because...</h2>
+					<p>Privacy means you can be yourself.  You can express ideas without fear of being discriminated against or unjustly punished. It&#x27;s your life without pausing to think who&#x27;s watching: party hard, open up to a friend, organize a revolution, hang out with whoever you want--privacy keeps you safe.  It&#x27;s a core principle in any free society.</p>
+				</div>
+				<div class="but">
+					<h2>But...</h2>
+					<p>Congress is moving bills (CISPA, Lieberman-Collins/Cyber Security Act) that would end meaningful privacy. Your texts, your emails.... shared by corporations, in the hands of government with scant limits. Goodbye privacy, hello police state. We need to kill their plans. </p>
+				</div>
+
+				<div class="take">
+					<p>	Take  5  steps to kill CISPA, the Cyber Security Act and the SECURE IT Act and save privacy</p>
+				</div>
+			</div>
+
+			 <fb:login-button size="large"
+			                 onlogin="console.log('onlogin callback')">
+			  Sign with Facebook
+			</fb:login-button> 
+		
+		
+		<script>
+	
+		
+		
+		</script>
+	
+	
+	
+			<div class="preface">	
+				<p class="instructions"><strong>We can kill <a href="http://www.opencongress.org/bill/112-h3523/show">CISPA</a> and <a href="http://www.opencongress.org/bill/112-s2105/show">S. 2105</a> like we killed SOPA, but we don&#x27;t have much time.</strong> The Senate will be back in DC to vote on this bill in a matter of days, but if thousands of people make calls, drop in at their senators&rsquo; offices while they&rsquo;re in-state for Memorial Day recess, and help spread the word, we can win. In short, contact the Senate in droves, tell your friends. We beat CISPA and its derivative Senate bills. </p>
+
+				<div class="dates">5/28 - 6/1 - Senate votes in early June</div>
+			</div>
+				
+				
+
+				<div class="breakitdown"></div>
+				
+
+						
+					<div class="step second" id="write">
+					<input type="checkbox"  class="done letter_form_thing"/>
+						<p class="details">We need everyone to email your senators right now about CISPA, the Cybersecurity Act, and the SECURE IT Act.</p>
+
+
+
+<div class="formz">
+		<span class="buffer" class="done">
+					
+						<form class="ak-form" name="letter" id="letter" method="POST" action="http://a.fightforthefuture.org/act/" accept-charset="utf-8">
+							<input placeholder="name" name="name" style="width: 15%;">
+							<input placeholder="email" name="email" style="width: 15%;" />
+							<input placeholder="address" name="address1" style="width: 25%;"/>
+							<input placeholder="zipcode" name="zip" style="width: 15%;"/>
+							<input type="hidden" name="page" value="cispa_letter">
+							<input type="hidden" name="utf8" value="&#x2714;">
+
+							<input type="hidden" name="lists" value="7" />
+							<button type="submit" id="emailnow">Email now</button>
+							
+								<script>
+								// Set a cookie on form submit
+								$("form#letter").submit(function() {
+										$.cookie("privacy_letter", "yes");
+										return true;
+								  });
+
+								</script>
+							</form>
+								<p>I am writing to you as your constituent. I strongly disagree with cybersecurity legislation that would put my privacy at risk. I am asking the Senator to vote NO on S. 2105, the SECURE IT Act, or any cybersecurity bill that infringes on my civil liberties. These bills reverse decades of consumer privacy laws, violate net neutrality, and would create a vast program of personal data sharing that would treat all internet users as criminals. The right to privacy is very important to me, and I think there are better approaches to cybersecurity.</p>
+				
+							<p class="disclosure">Fight for the Future will update you about this and related campaigns. </p>
+				
+						</form>
+					</span>
+					</div>
+				</div><!-- close .step .second -->
+				
+				
+				
+				
+				
+					<div class="step facebooks" id="cover">
+						<input type="checkbox"  class="done cover_photo"/>
+
+						<p class="details">Your Facebook profile, Your FBI file. Before doing anything else, join the Facebook protest. If you care about stopping CISPA, change your Facebook cover photo to this -- show the world how creepy Facebook becomes when the government has all our data. This is probably the one thing you can do that will make your friends take action. </p>
+
+					<a href="/cispa-fftf-cover-image.png" class="fb_cover_download_button">Download FB Cover Image</a>
+					
+					<p style="float: right; width: 670px; clear: both; margin-top: 10px; font-size: 12px;">Not sure how to do this? Your cover photo is that area that runs across your Facebook profile page. To change it, download this photo, then choose "Change Cover" in the bottom right of your cover photo. Save it, you should be good to go!</p>
+					
+					<p class="details" style="margin-top: 20px; text-align: right;"><a href="https://www.facebook.com/sharer/sharer.php?u=www.privacyisawesome.com"><img src="http://freebieber.org/img/buttons/wide_fb.png" alt="Share on Facebook" /></a> <a href="https://twitter.com/intent/tweet?text=Join%20Facebook%20protest%20to%20stop%20%23CISPA.%20FB%2C%20twitter%20-%3E%20creepy%20database%20for%20gov%20to%20access%2C%20build%20files%20on%20us.%20Join%20me%3A%20&url=http%3A%2F%2Fwww.privacyisawesome.com"><img src="http://freebieber.org/img/buttons/wide_tw.png" alt="Share on Twitter" /></a></p>
+				
+						</div>
+										
+						
+						<div class="step drop-in" id="dropin">
+							<input type="checkbox"  class="done download_pdf"/>
+
+							<p class="details">Educate your senators -  drop off or mail this handy one-pager our senators need to read before voting on these bills. A lot of our senators don&rsquo;t even know what these bills are about. Get the sheet here, then either drop it off at their local office or mail it to them in D.C. along with a personal note. This step takes some work, but it is probably the most effective thing you can do. Find an office near you - <a href="http://www.senate.gov/general/contact_information/senators_cfm.cfm">snail mail state office addresses can be found here</a>.</p>
+							
+							<a href="/cispa-drop-in-fftf.pdf" class="cispa-drop-in-fftf" />Get It Here</a>
+
+
+							</div>
+
+						
+						
+						
+						<div class="step first" id="calling">
+		<input type="checkbox"  class="done call_form_thing" />
+
+		<p class="details">Call your senators, tell them you oppose Lieberman-Collins, and ask for a meeting or information about an event during the Memorial Day recess.  This tells Senators that their constituents strongly oppose the bill. And it&#x27;s the first step to getting a constituent meeting, perhaps the most powerful way to change a Senator&#x27;s mind (if you can&#x27;t do a meeting, no problem, others can--just get a date and time!)
+
+		</p>
+			<div class="formz">
+				<span class="buffer">
+					<div id="what_to_say">
+					</div>
+			<p class="instru">Enter your phone number and we&#x27;ll connect you to your Senator. We&#x27;ll give you a script, numbers to call, and a form to report back (if you get a meeting, or if they say something useful).</p>
+			<p class="script" style="display: none;"><strong style="display: block; margin-bottom: 10px; font-weight: normal;">We&#x27;re connecting you right now, here&#x27;s a suggestion of what to say:</strong>
+
+
+&quot;Hi, my name is ____ . I&rsquo;m calling from (town, state). I want to urge the senator to vote NO on CISPA, the Cybersecurity Act, and the SECURE IT. These bills all violate my right to privacy by erasing decades of privacy laws and giving companies legal immunity for sharing my information with the government. Please vote NO on these bills and any cybersecurity legislation that violates basic civil liberties.  <br style="margin-bottom: 10px;"/>
+
+What is the best way to go about doing that?&quot; <br style="margin-bottom: 10px;"/>
+
+If they say no to a meeting, ask if the senator has any public events scheduled for over the recess that you could attend.  <br style="margin-bottom: 10px;"/>
+
+If they ask for more information about your concerns, tell them you oppose the Lieberman-Collins cybersecurity bill (S.2105) and any cybersecurity legislation that infringes on your right to privacy.&quot;</p>
+											<div id="target_checkboxes"></div><div id="ak-survey_question"></div>
+											<form action="https://secure.mcommons.com/profiles/join" method="post" id="call">
+											<input type="hidden" name="redirect_to" value="http://mobilecommons.com/redirect_to_instructions" />
+											<input type="hidden" name="mconnect" value="17521" />
+											<div id="errors" style="display: none;"></div>
+											<input type="text" name="person[phone]" placeholder="phone number" class="required phoneUS" style="width: 24%;"/>
+											<input type="text" name="person[postal_code]" placeholder="zip" style="width: 15%;" class="zip" />
+											<input type="text" name="person[email]" placeholder="Email (optional)" class="email" style="width: 27%;" />
+											<button type="submit" id="findursenator" />Find your senator</button>
+											</form>
+											<form class="action_form" id="cispa_reportback" name="act" method="POST" action="http://a.fightforthefuture.org/act/" accept-charset="utf-8" style="display: none;" >
+											<input type="hidden" name="utf8" value="&#x2714;">
+
+											<input id="id_name" type="text" name="name" placeholder="your name" style="width: 261px;"/>
+									    <input id="emailzz" type="email" name="email" placeholder="your email" style="width: 261px;"/>
+											<textarea placeholder="Report how your call went" name="user_msg"></textarea>
+
+											<input type="hidden" name="page" value="cispa_reportback">
+
+											<input type="hidden" name="lists" value="7" />
+											<button type="submit">Tell us about your call</button>
+											</form>
+
+											<script>
+											// Send something like this on submit, hide the form and show the script
+
+											$("button#findursenator").click(function (e) {
+													e.preventDefault();
+													$("#errors").hide();
+													if (isValid($("input.phoneUS").val())) {
+														$("form#call").hide();
+														$.post("https://secure.mcommons.com/profiles/join", { 
+															"person[phone]": $('form#call input.phoneUS').val(), 
+															"person[postal_code]": $('form#call input.zip').val(), 
+															"person[email]": $('form#call input.email').val(), 																		
+															mconnect: "17521"
+														} );
+
+														$("form#cispa_reportback input#emailzz").val($('form#call input.email').val());
+
+														$("p.instru").hide();
+														$("p.script").show();
+														$("form")
+														$("form#cispa_reportback").show();
+														$.cookie("privacy_call", "yes");
+
+													} else {
+														$("#errors").show();
+														$("#errors").append("<p>This doesn't look like a valid phone number, can you double check it?");
+														}
+
+											       //
+											    });
+
+											</script>
+
+			</form>
+			<p class="disclosure">Email is optional. Fight for the Future will update you about this and related campaigns. </p>
+
+
+
+		</div>
+	</div><!-- close .step .first -->
+						
+						
+						
+		
+		
+				<div class="step fourth">
+					<input type="checkbox"  class="done souvenir_form_thing" />
+	
+					<p class="details">Donate to the organizers!  We&#x27;ve got 3 organizers working to track progress, post meeting times, make each meeting as effective as possible, and pivot tactics if necessary.  The same team organized dozens of Senate meetings to stop SOPA/PIPA.  Their budget, including web dev &amp; design: $10,000.  A donor (Bob Fertik of <a href="http://democrats.com">Democrats.com</a>) will match your donations up to $5,000.  If you can, please, chip in.</p>
+	
+					<a href="http://www.indiegogo.com/save-privacy" class="btn" id="souvenir">Fund this project</a>
+					<script>
+					$("a#souvenir").click(function (e) {
+							e.preventDefault();
+							$.cookie("privacy_souvenir", "yes");
+							window.location = "http://www.indiegogo.com/save-privacy";
+						});
+					</script>
+				</div><!-- close .step .fourth -->
+
+				<div class="step fifth">
+					<input type="checkbox"  class="done social_form_thing"/>
+	
+					<p class="details">Finally, and most of all, we need numbers.  If you care about your privacy and this plan makes sense, share it with as many people as you can.  Twitter &amp; Facebook of course.  But also just write a personal email or send a mass text to everyone you know.  If you&#x27;ve got ideas for how to reach even more people, share them on our Reddit forum---maybe we can help.</p>
+	
+				<p style="width: 327px; padding: 0; margin: 0; clear: both; float: right;"><a href="http://www.reddit.com/r/CISPA/comments/u2u2m/thread_for_organizing_to_kill_cispa_this_weekend/" class="btn reddit">Reddit forum</a> <a href="https://www.facebook.com/events/294106487345834/" class="btn fb">Facebook Forum</a></p>
+				<script>
+				$(".fifth a.btn").click(function (e) {
+						e.preventDefault();
+						console.log("testing");
+						$.cookie("privacy_social", "yes");
+						window.location = $(this).attr('href');
+					});
+				</script>
+					</div>
+					<!--ali code START-->
+					<div class="main">
+		<p class="label">Spread the word as much as you can. If you got a site or profile to add these flyers to, we can reach thousands more people</p>
+		<div class="embed"><img src="/images/300X250_1.jpg" alt="300X250 embed" height="185" width="222" /><p class="label">300px X 250px <a class="getit" href="images/bigsize/300X250_1.png" target="blank">get it here</a></p></div>
+		<div class="embed"><img src="/images/500X300.jpg" alt="500X300 embed" height="222" width="370" /><p class="label">300px X 250px <a class="getit" href="images/bigsize/500X300.png" target="blank">get it here</a></p></div>
+		<div class="embed"><img src="/images/300X250_2.jpg" alt="300X250 embed" height="185" width="222" /><p class="label">300px X 250px <a class="getit" href="images/bigsize/300X250_2.png" target="blank">get it here</a></p></div>
+	</div><!--ali code END-->
+				</div><!-- close .step .fourth -->
+				
+				<p style="clear: both; margin: 0px auto; padding-top: 20px; margin-top: 20px; border-top: 1px dotted #000; width: 800px;">CISPA and all cybersecurity legislation that would hurt our civil liberties is opposed by: Demand Progress, <a href="https://www.eff.org/deeplinks/2012/05/call-action-join-fight-against-cyber-spying-proposals-senate">EFF</a>, <a href="https://secure.aclu.org/site/Advocacy?cmd=display&page=UserAction&id=4229&s_subsrc=120413_cybersecurity_ac">ACLU</a>, <a href="http://www.markmeckler.com/congress-attacking-internet-freedom-again-time-to-act-to-stop-them/">Mark Meckler (Tea Party Co-founder)</a>, <a href="http://act2.freepress.net/sign/cispa/">Free Press</a>, <a href="http://www.avaaz.org/en/stop_cispa/">Avaaz</a>, <a href="http://www.constitutionproject.org/">Constitution Project</a>.</p>
+				
+					<div class="breakitdown"></div>
+					<h4 class="ospdin">Is CISPA dead yet? <a href="#top">Go back to the top.</a></h4>
+<div>
+
+<div class="bordertwo" id="staff">
+	<h5>Fight for the Future</h5>
+</div>
+<div class="footer">
+	<p class="copyleft ospdin" style="font-size: 30px; line-height:1.2;  width: 700px; margin: 0 auto;">This campaign is a joint effort of: <a href="http://fightforthefuture.org" >Fight for the Future</a>, <a href="http://democrats.com">Democrats.com</a>, <a href="http://www.libertycoalition.net/">The Liberty Coalition</a>, <a href="http://theeca.com/">Entertainment Consumers Association</a></p>
+	<p style="text-align: center; margin-top: 20px;"><a href="http://fightforthefuture.org/privacy" style="color: #fff;">Privacy Policy</a></p>
+</div>
+
+</div>
+<script src="/modal.js"></script>
+
+<script>
+if ($.cookie("privacy_call") == "yes") {
+	$('.call_form_thing').attr('checked', true);
+	}	
+	
+if ($.cookie("privacy_letter") == "yes") {
+	$('.letter_form_thing').attr('checked', true);
+	}
+
+if ($.cookie("privacy_reminder") == "yes") {
+	$('.reminder_form_thing').attr('checked', true);
+	}
+
+if ($.cookie("privacy_souvenir") == "yes") {
+	$('.souvenir_form_thing').attr('checked', true);
+	}
+	
+	if ($.cookie("privacy_social") == "yes") {
+		$('.social_form_thing').attr('checked', true);
+		}
+
+
+
+
+			//function geolocate(timezone, cityPrecision)
+			var visitorGeolocation = new geolocate(false, true);
+
+			var callback = function(){
+				if (visitorGeolocation.getField('countryCode') != 'US') {
+					displayINTLModal();
+				} 
+		};
+			visitorGeolocation.checkcookie(callback);
+			
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26576645-3']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
