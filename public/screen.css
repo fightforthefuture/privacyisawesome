@@ -181,6 +181,7 @@ p.instructions strong {
 }
 
 .step p.details {width: 670px; float: right; clear: right;}
+.step p {margin-bottom: 10px;}
 .step h3 {font-size: 16px; font-weight: bold; width: 670px; float: right;}
 .step .formz {
 	width: 670px; 
