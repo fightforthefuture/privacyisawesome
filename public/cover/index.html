@@ -252,19 +252,6 @@ if ($.cookie("privacy_souvenir") == "yes") {
 
 
 
-			//function geolocate(timezone, cityPrecision)
-			var visitorGeolocation = new geolocate(false, true);
-
-			var callback = function(){
-				if (visitorGeolocation.getField('countryCode') != 'US') {
-					displayINTLModal();
-				} 
-		};
-			visitorGeolocation.checkcookie(callback);
-			
-</script>
-
-<script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-26576645-3']);
