@@ -177,7 +177,16 @@ p.instructions strong {
 }
 
 .step input.done {
-	float: left; margin-left: 100px; margin-top: 20px;
+	float: left; margin-left: 68px; margin-top: 22px;
+}
+
+.step span.step_number {
+	color: #fff;
+	font-weight: bold;
+	float: left;
+	font-size: 30px;
+	margin-left: 18px;
+	margin-top:3px;
 }
 
 .step p.details {width: 670px; float: right; clear: right;}
@@ -260,6 +269,7 @@ a#souvenir {float: right; clear: both;}
 .fifth {background: url(/images/stepfive.png) no-repeat;}
 .facebooks {background: url(/images/stepfb.png) no-repeat;}
 .drop-in {background: url(/images/stepdropin.png) no-repeat;}
+.meetings {background: url(/images/stepmeetings.png) no-repeat;}
 
 
 h4.ospdin {
