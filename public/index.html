@@ -129,7 +129,7 @@
 <script src="/jquery.cookie.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
 <script src="https://s3.amazonaws.com/fftf.media/img/placeholder.js"></script>
-<script src="http://a.fightforthefuture.org/samples/actionkit.js"></script>
+
 <script src="/fbupload.js"></script>
 
 </head>
@@ -288,7 +288,6 @@
 <script>
 
 $('#pickastate').change(function() {
-//  alert('Handler for .change() called.');
 		window.location = $("#pickastate").val();
 });
 
@@ -307,15 +306,18 @@ $('#pickastate').change(function() {
 <div class="formz">
 		<span class="buffer" class="done">
 					
-						<form class="ak-form" name="letter" id="letter" method="POST" action="http://a.fightforthefuture.org/act/" accept-charset="utf-8">
-							<input placeholder="name" name="name" style="width: 15%;">
-							<input placeholder="email" name="email" style="width: 15%;" />
-							<input placeholder="address" name="address1" style="width: 25%;"/>
-							<input placeholder="zipcode" name="zip" style="width: 15%;"/>
-							<input type="hidden" name="page" value="cispa_letter">
-							<input type="hidden" name="utf8" value="&#x2714;">
-
-							<input type="hidden" name="lists" value="7" />
+						<form class="ak-form" name="letter" id="letter" method="POST" action="http://nt.salsalabs.com/save" accept-charset="utf-8">
+							<input placeholder="name" name="First_Name" style="width: 15%;">
+							<input placeholder="email" name="Email" style="width: 15%;" />
+							<input placeholder="address" name="Street" style="width: 25%;"/>
+							<input placeholder="zipcode" name="Zip" style="width: 15%;"/>
+			
+							<input type="hidden" name="organization_KEY" value="501"/>
+							<input type="hidden" name="redirect" value="http://privacyisawesome.com/thanks"> 
+							<input type="hidden" name="object" value="supporter"/>
+							<input type="hidden" name="ip" id="signup_ip" />
+							<input type="hidden" name="user_agent" id="user_agent" />
+							<input type="hidden" name="receive_email" value="3">
 							<button type="submit" id="emailnow">Email now</button>
 							
 								<script>
@@ -411,17 +413,61 @@ $('#pickastate').change(function() {
 											<input type="text" name="person[email]" placeholder="Email (optional)" class="email" style="width: 27%;" />
 											<button type="submit" id="findursenator" />Find your senator</button>
 											</form>
-											<form class="action_form" id="cispa_reportback" name="act" method="POST" action="http://a.fightforthefuture.org/act/" accept-charset="utf-8" style="display: none;" >
-											<input type="hidden" name="utf8" value="&#x2714;">
-
-											<input id="id_name" type="text" name="name" placeholder="your name" style="width: 261px;"/>
-									    <input id="emailzz" type="email" name="email" placeholder="your email" style="width: 261px;"/>
-											<textarea placeholder="Report your senator's position" name="user_msg"></textarea>
-
-											<input type="hidden" name="page" value="cispa_reportback">
-
-											<input type="hidden" name="lists" value="7" />
-											<button type="submit">Tell us about your call</button>
+											<form class="action_form" id="cispa_reportback" name="act" method="POST" action="" accept-charset="utf-8" style="display: none;" >
+											<label>Select your state to tell us about your call:</label>
+											<select name="state" id="other_pickastate">
+												<option selected>-- Select --</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/40/alabama-thread-for-scheduling-meetings">Alabama</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/66/alaska-thread-for-scheduling-meetings">Alaska</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/39/arizona-thread-for-scheduling-meetings">Arizona</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/43/arkansas-thread-for-scheduling-meetings">Arkansas</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/73/california-thread-for-scheduling-meetings">California</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/26/colorado-thread-for-scheduling-meetings">Colorado</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/38/connecticut-thread-for-scheduling-meetings">Connecticut</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/56/delaware-threat-for-scheduling-meetings">Delaware</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/31/florida-thread-for-scheduling-meetings">Florida</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/30/georgia-thread-for-scheduling-meetings">Georgia</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/61/hawaii-thread-for-scheduling-meetings">Hawaii</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/41/idaho-thread-for-organizing-meetings">Idaho</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/24/illinois-thread-for-organizing-meetings">Illinois</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/33/indiana-thread-for-scheduling-meetings">Indiana</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/63/iowa-thread-for-scheduling-meetings">Iowa</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/54/kansas-thread-for-scheduling-meetings">Kansas</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/48/kentucky-thread-for-scheduling-meetings">Kentucky</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/50/louisiana-thread-for-scheduling-meetings">Louisiana</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/49/maine-thread-for-scheduling-meetings">Maine</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/29/maryland-thread-for-scheduling-meetings">Maryland</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/25/massachusetts-thread-for-organizing-meetings">Massachusetts</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/34/michigan-thread-for-scheduling-meetings">Michigan</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/59/minnesota-thread-for-scheduling-meetings">Minnesota</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/62/mississippi-thread-for-scheduling-meetings">Mississippi</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/36/missouri-thread-for-scheduling-meetings">Missouri</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/35/montana-thread-for-scheduling-meetings">Montana</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/57/nebraska-thread-for-scheduling-meetings">Nebraska</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/47/nevada-thread-for-scheduling-meetings">Nevada</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/46/new-hampshire-thread-for-scheduling-meetings">New Hampshire</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/32/new-jersey-thread-for-scheduling-meetings">New Jersey</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/64/new-mexico-thread-for-scheduling-meetings">New Mexico</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/44/new-york-thread-for-scheduling-meetings">New York</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/51/north-carolina-thread-for-scheduling-meetings">North Carolina</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/70/north-dakota-thread-for-scheduling-meetings">North Dakota</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/37/ohio-thread-for-organizing-meetings">Ohio</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/52/oklahoma-thread-for-scheduling-meetings">Oklahoma</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/55/oregon-thread-for-scheduling-meetings">Oregon</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/42/pennsylvania-thread-for-scheduling-meetings">Pennsylvania</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/58/rhode-island-thread-for-scheduling-meetings">Rhode Island</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/65/south-carolina-thread-for-scheduling-meetings">South Carolina</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/67/south-dakota-thread-for-scheduling-meetings">South Dakota</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/28/tennessee-thread-for-scheduling-meetings">Tennessee</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/27/texas-thread-for-organizing-meetings">Texas</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/72/utah-thread-for-scheduling-meetings">Utah</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/68/vermont-thread-for-scheduling-meetings">Vermont</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/69/virginia-thread-for-scheduling-meetings">Virginia</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/45/washington-thread-for-scheduling-meetings">Washington</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/60/west-virginia-thread-for-scheduling-meetings">West Virginia</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/53/wisconsin-thread-for-scheduling-meetings">Wisconsin</option>
+												<option value="http://privacyisawesome.vanillaforums.com/discussion/71/wyoming-thread-for-scheduling-meetings">Wyoming</option>
+											</select>
 											</form>
 
 											<script>
@@ -578,5 +624,20 @@ if ($.cookie("privacy_souvenir") == "yes") {
   })();
 
 </script>
+
+	<script type="application/javascript">
+	    function getip(json){
+//	      alert(json.ip); // alerts the ip address
+				$('#signup_ip').val(json.ip);
+	    }
+	
+	$("#user_agent").val(navigator.userAgent);
+	</script>
+		<script type="application/javascript" src="http://jsonip.appspot.com/?callback=getip"></script>
+		
+		<script>
+		$('#other_pickastate').change(function() {
+				window.location = $("#pickastate").val();
+		});
 </body>
 </html>

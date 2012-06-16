@@ -1,7 +1,6 @@
 <html>
 <head>
 	<title>Privacy Is Awesome</title>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	
 	<link rel="stylesheet" href="/screen.css">
 </head>
@@ -12,14 +11,18 @@
 			<p class="details" style="display: block; float: none; width: 100%;">Not in the US? This affects you too, but we're still working on ways you can help. Sign up here and we'll contact you with actions for non-US folks.</p>
 
 		
-				<form class="noformz action_form" name="reminder" id="reminder" method="POST" action="http://a.fightforthefuture.org/act/" accept-charset="utf-8" style="overflow: auto;">
-					<input placeholder="name" name="name" style="width: 35%" />
-					<input placeholder="email" name="email" style="width: 35%;"/>
+				<form class="noformz action_form" name="reminder" id="reminder" method="POST" action="http://nt.salsalabs.com/save" accept-charset="utf-8" style="overflow: auto;">
+					<input placeholder="name" name="First_Name" style="width: 35%" />
+					<input placeholder="email" name="Email" style="width: 35%;"/>
 
-					<input type="hidden" name="utf8" value="&#x2714;">
-					<input type="hidden" name="page" value="cispa_intl">
-
-					<input type="hidden" name="lists" value="7" />
+					<input type="hidden" name="organization_KEY" value="501"/>
+					<input type="hidden" name="redirect" value="http://privacyisawesome.com/thanks/intl.html"> 
+					<input type="hidden" name="object" value="supporter"/>
+					<input type="hidden" name="link" value="groups"/>
+					<input type="hidden" name="linkKey" value="10"/>
+					<input type="hidden" name="ip" id="signup_ip" />
+					<input type="hidden" name="user_agent" id="user_agent" />
+					<input type="hidden" name="receive_email" value="3">
 					
 					<button type="submit" />Sign up, stay informed!</button>
 	
@@ -31,7 +34,18 @@
 		
 
 		
-		
+		  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+			<script type="application/javascript">
+			    function getip(json){
+		//	      alert(json.ip); // alerts the ip address
+						$('#signup_ip').val(json.ip);
+			    }
+
+			$("#user_agent").val(navigator.userAgent);
+			</script>
+
+			<script type="application/javascript" src="http://jsonip.appspot.com/?callback=getip"></script>
 		
 		
 	
