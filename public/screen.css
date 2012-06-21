@@ -74,7 +74,7 @@ body {
 
 .photostream {
 	height: 178px;
-	background: url(/images/photostream.png) repeat-x center;
+	background: url(/images/photostream.jpg) repeat-x center;
 }
 
 .bluestripes {
@@ -147,15 +147,25 @@ p.instructions strong {
 	color: #a53937;
 }
 
-.dates {
+/*.dates {
 	width: 256px;
 	display: block;
 	text-indent: -9999px;
 	height: 116px; 
 	background: url(/images/datesbackground.png) no-repeat;
 	float: right;
+}*/
+
+.dates {
+	width: 273px;
+	display: block;
+	text-indent: -9999px;
+	height: 132px; 
+	background: url(/images/datesbackground2.png) no-repeat;
+	float: right;
 }
-.preface {overflow: auto; margin-left: 20px; margin-right: 20px;}
+
+.preface {overflow: auto; margin-left: 20px; margin-right: 20px; margin-bottom: 20px;}
 
 .breakitdown {
 	width: 884px;
