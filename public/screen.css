@@ -137,7 +137,7 @@ form.noformz {text-align: right;}
 }
 
 p.instructions {
-	width: 540px;
+	width: 460px;
 	float: left;
 	font-weight: bold;
 	margin-top: 20px;
@@ -211,7 +211,7 @@ p.instructions strong {
 	margin-top: 20px;
 }
 
-.step .formz .buffer {
+.step .formz .buffer, .new_intro .step .new_buffer {
 	background: #5cb1d9;
 	margin: 10px;
 	border: 1px solid #fff;
@@ -273,15 +273,41 @@ p.instructions strong {
 a#souvenir {float: right; clear: both;}
 .noformz {width: 675px; display: block; float: right; margin-top: 20px;}
 .first {background: url(/images/stepcall.png) no-repeat;}
-.second {background: url(/images/steptwo.png) no-repeat;}
+.second {border-top: 1px dotted #000;
+ margin-top: 40px; padding-top: 40px; background: url(/images/steptwo.png) no-repeat;
+	background-position: 0px 40px}
 .third {background: url(/images/stepthree.png) no-repeat;}
 .fourth {background: url(/images/stepfour.png) no-repeat;}
 .fifth {background: url(/images/stepfive.png) no-repeat;}
 .facebooks {background: url(/images/stepfb.png) no-repeat;}
 .drop-in {background: url(/images/stepdropin.png) no-repeat;}
-.meetings {background: url(/images/stepmeetings.png) no-repeat;}
+.meetings {
+	background: url(/images/stepmeetings.png) no-repeat; 
+	border: 1px solid #fff;
+	background-position: 20px 20px;
+	}
 
+.new_intro .step {
+	background-color: #387fa1;
+	padding: 20px;
+	border-radius: 5px;
+	color: #fff;
+	margin-bottom: 0;
+}
+.new_intro .step .formz {margin: 0; margin-top: -20px;}
+.new_intro .step .formz .buffer, .new_intro .step .formz {background: none; border: none;}
+.new_intro .step p.details {
+	width: 540px;
+}
+.new_intro .step .formz {width: 600px;}
+.new_intro .step .formz .buffer {width: auto;}
+.new_intro .new_buffer {padding: 15px; background: #b6ced9; border-radius: 5px; padding-bottom: 15px;}
 
+.new_intro p.instructions {
+	width: 430px;
+}
+
+.new_intro .dates {margin-top: 30px;}
 h4.ospdin {
 	margin: 0 auto;
 	display: block;
@@ -383,3 +409,17 @@ a.cispa-drop-in-fftf:hover {
 
 
 .fb_button_large {margin-top: 83px;}
+
+
+.new_intro {
+	background: #cddbe2	;
+	padding: 35px;
+	border-radius: 5px;
+	border: 1px solid #fff;
+}
+
+.fresh_buffer {
+	border-radius: 6px;
+	background: #c8cacb;
+	padding: 5px;
+}
