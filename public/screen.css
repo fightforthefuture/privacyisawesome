@@ -137,10 +137,7 @@ form.noformz {text-align: right;}
 }
 
 p.instructions {
-	width: 460px;
-	float: left;
 	font-weight: bold;
-	margin-top: 20px;
 }
 
 p.instructions strong {
@@ -227,7 +224,7 @@ p.instructions strong {
 
 .buffer .disclosure {font-weight: normal; font-size: 12px;}
 
-.step form input, .step form textarea {
+form input, form textarea {
 	font-size: 16px;
 /*	height: 42px;*/
 	padding-top: 11px;
@@ -238,13 +235,13 @@ p.instructions strong {
 	display: inline-block;
 }
 
-.step form textarea {
+form textarea {
 	width: 536px;
 	height: 100px;
 	margin-top: 3px;
 }
 
-.step form button, a.btn {
+form button, a.btn {
 	text-decoration: none;	
 	padding-top: 9px;
 	padding-bottom: 9px;
@@ -303,9 +300,6 @@ a#souvenir {float: right; clear: both;}
 .new_intro .step .formz .buffer {width: auto;}
 .new_intro .new_buffer {padding: 15px; background: #b6ced9; border-radius: 5px; padding-bottom: 15px;}
 
-.new_intro p.instructions {
-	width: 430px;
-}
 
 .new_intro .dates {margin-top: 30px;}
 h4.ospdin {
@@ -323,7 +317,7 @@ h4.ospdin a {color: #5d5d5d; text-decoration: none;}
 	clear: both;
 	height: 83px;
 	overflow: auto;
-	margin-top: 20px;
+	margin-top: 50px;
 	position: relative; z-index: 4;
 }
 
@@ -421,5 +415,7 @@ a.cispa-drop-in-fftf:hover {
 .fresh_buffer {
 	border-radius: 6px;
 	background: #c8cacb;
+	background: rgba(0, 0, 0, 0.3);
 	padding: 5px;
+	margin-top: -150px;
 }
